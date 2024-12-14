@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            animation-name: backdiv;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            background-color: rgb(131, 8, 8);
+            width: 200px;
+            height: 200px;
+            transform: rotate(-45deg);
+            position: relative;
+            animation-name: beat;
+            animation-duration: 3500ms;
+            animation-iteration-count: infinite;
+        }
+
+        .heart:after,
+        .heart:before {
+            content: "";
+            position: absolute;
+            background-color: rgb(131, 8, 8);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 100px;
+        }
+
+        .heart:before {
+            top: -100px;
+            left: 0;
+        }
+
+        @keyframes backdiv {
+            50% {
+                background: #fffffffd;
+            }
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            50% {
+                transform: scale(0.8) rotate(-45deg);
+            }
+        }
+
+        button {
+            background-color: rgb(131, 8, 8);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-family: 'Nunito', sans-serif;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button a:hover {
+            text-decoration: underline;
+        }
+
+        .elements {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .heart {
+                width: 150px;
+                height: 150px;
+            }
+
+            .heart:after,
+            .heart:before {
+                width: 150px;
+                height: 150px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heart {
+                width: 100px;
+                height: 100px;
+            }
+
+            .heart:after,
+            .heart:before {
+                width: 100px;
+                height: 100px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <title>Flores Amarillas</title>
+</head>
+
+<body>
+    <div class="back">
+        <div class="elements">
+            <div class="heart"></div>
+            <button><a href="index2.html">Touch My Heart</a></button>
+        </div>
+    </div>
+</body>
+
+</html>
